@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventclickComponent } from './eventclick.component';
+import { NgModelComponent } from './ng-model.component';
 
-describe('EventclickComponent', () => {
-  let component: EventclickComponent;
-  let fixture: ComponentFixture<EventclickComponent>;
+describe('NgModelComponent', () => {
+  let component: NgModelComponent;
+  let fixture: ComponentFixture<NgModelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventclickComponent ]
+      declarations: [ NgModelComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EventclickComponent);
+    fixture = TestBed.createComponent(NgModelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

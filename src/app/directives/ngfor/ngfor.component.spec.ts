@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgOnchangeHookComponent } from './ng-onchange-hook.component';
+import { NgforComponent } from './ngfor.component';
 
-describe('NgOnchangeHookComponent', () => {
-  let component: NgOnchangeHookComponent;
-  let fixture: ComponentFixture<NgOnchangeHookComponent>;
+describe('NgforComponent', () => {
+  let component: NgforComponent;
+  let fixture: ComponentFixture<NgforComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgOnchangeHookComponent ]
+      declarations: [ NgforComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NgOnchangeHookComponent);
+    fixture = TestBed.createComponent(NgforComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

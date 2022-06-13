@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DatapassInputComponent } from './datapass-input.component';
+import { NgStyleComponent } from './ng-style.component';
 
-describe('DatapassInputComponent', () => {
-  let component: DatapassInputComponent;
-  let fixture: ComponentFixture<DatapassInputComponent>;
+describe('NgStyleComponent', () => {
+  let component: NgStyleComponent;
+  let fixture: ComponentFixture<NgStyleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DatapassInputComponent ]
+      declarations: [ NgStyleComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DatapassInputComponent);
+    fixture = TestBed.createComponent(NgStyleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
