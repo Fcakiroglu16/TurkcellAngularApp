@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularapp';
+
+  save(input:string)
+  {
+    input= input+"123";
+console.log(input);
+  }
 }
