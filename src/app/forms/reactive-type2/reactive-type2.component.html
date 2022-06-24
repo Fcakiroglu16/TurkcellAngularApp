@@ -1,0 +1,20 @@
+
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2>Giriş</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="signin()">
+
+            <div class="mb-3">
+                <label for="userName" class="form-label">UserName</label>
+                <input class="form-control" type="text" formControlName="userName" >
+            </div>
+          
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input class="form-control" type="password" formControlName="password" >
+            </div>
+            <button class="btn btn-primary" type="submit">Giriş</button>
+        </form>
+    </div>
+</div>
