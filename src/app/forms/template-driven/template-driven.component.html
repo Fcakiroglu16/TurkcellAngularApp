@@ -75,17 +75,12 @@
             <br>
 
             <div *ngFor="let item  of genderMenu">
-
-               
-
                     <div class="form-check">
                         <input [ngModel]="loginModel.gender" (ngModelChange)="genderChange($event)" class="form-check-input" type="radio" name="gender" id="flexRadioDefault1"  [value]="item.value">
                         <label class="form-check-label" for="flexRadioDefault1">
                             {{item.text}}
                         </label>
                       </div>
-
-
             </div>
 
 

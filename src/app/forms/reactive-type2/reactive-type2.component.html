@@ -28,6 +28,15 @@
                 <option *ngFor="let item of countryMenu" value="{{item.value}}">{{item.text}}</option>
 
             </select>
+
+            <div *ngFor="let item  of genderMenu">
+                <div class="form-check">
+                    <input formControlName="gender"  class="form-check-input" type="radio"   [value]="item.value">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        {{item.text}}
+                    </label>
+                  </div>
+            </div>
             <button class="btn btn-primary mt-3" type="submit">Giriş</button>
         </form>
     </div>
