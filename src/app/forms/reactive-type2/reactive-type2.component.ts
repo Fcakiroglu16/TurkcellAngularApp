@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CountryDropMenu } from 'src/app/models/country-drop-menu';
 import { GenderRadioMenu } from 'src/app/models/gender-radio-menu';
 
@@ -16,8 +16,8 @@ export class ReactiveType2Component implements OnInit {
   constructor() {
 
     this.loginForm= new FormGroup({
-      userName:new FormControl(),
-      password:new FormControl(),
+      userName:new FormControl('',Validators.required),
+      password:new FormControl('',[Validators.required,Validators.minLength(4)]),
       rememberMe:new FormControl(false),
       country:new FormControl(0),
       gender:new FormControl(2)
@@ -27,14 +27,13 @@ export class ReactiveType2Component implements OnInit {
    }
    signin()
    {
+  
      console.log(this.loginForm.value);
    }
   ngOnInit(): void {
-
-
-
-
-
   }
-
+  isInValidMessageShow(fromControlName:string)
+  {
+  return  this.loginForm.get(fromControlName)?.invalid && (this.loginForm.get(fromControlName)?.dirty || this.loginForm.get(fromControlName)?.touched);
+  }
 }

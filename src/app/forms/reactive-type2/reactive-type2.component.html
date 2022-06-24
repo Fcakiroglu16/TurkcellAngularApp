@@ -9,12 +9,33 @@
                 <label for="userName" class="form-label">UserName</label>
                 <input class="form-control" type="text" formControlName="userName" >
             </div>
-          
+            <div class="alert alert-danger"
+            *ngIf="isInValidMessageShow('userName')">
+            <small *ngIf="loginForm.get('userName')?.errors?.['required']">Kullanıcı adı alanı zorunludur</small>
+        </div>
+            <div class="alert alert-info">
+                <ul>
+                    <li>Valid :{{loginForm.get("userName")?.valid}}</li>
+                    <li>Invalid :{{loginForm.get("userName")?.invalid}}</li>
+                    <li>Errors :{{loginForm.get("userName")?.errors | json}}</li>
+                    <li>Dirty :{{loginForm.get("userName")?.dirty}}</li>
+                    <li>Pristine :{{loginForm.get("userName")?.pristine}}</li>
+                    <li>Touched :{{loginForm.get("userName")?.touched}}</li>
+                    <li>UnTouched :{{loginForm.get("userName")?.untouched}}</li>
+                    <li>value :{{loginForm.get("userName")?.value}}</li>
+                </ul>
+
+            </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input class="form-control" type="password" formControlName="password" >
             </div>
+            <div class="alert alert-danger" *ngIf="isInValidMessageShow('password')">
+                <small  *ngIf="loginForm.get('password')?.errors?.['required']">password alanı zorunludur</small>
+                <small  *ngIf="loginForm.get('password')?.errors?.['minlength']">password alanı en az 4 karakter   olabilir.</small>
+                  
 
+            </div>
             <div class="form-check">
                 <input  class="form-check-input" type="checkbox" formControlName="rememberMe">
                 <label class="form-check-label" for="flexCheckDefault">

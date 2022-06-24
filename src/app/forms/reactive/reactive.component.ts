@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { setupTestingRouterInternal } from '@angular/router/testing';
 import { CountryDropMenu } from 'src/app/models/country-drop-menu';
 import { GenderRadioMenu } from 'src/app/models/gender-radio-menu';
@@ -18,8 +18,8 @@ export class ReactiveComponent implements OnInit {
   constructor(fb: FormBuilder) {
 
     this.loginForm = fb.group({
-      userName: '', // FormControl();
-      password: '',
+      userName: fb.control('',Validators.required), // FormControl()
+      password: fb.control('',[Validators.required,Validators.minLength(4)]),
       rememberMe:false,
       country:0,
       gender:[1]
@@ -27,11 +27,17 @@ export class ReactiveComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
+ 
   }
   signin()
   {
     console.log(this.loginForm.value);
+  }
+
+  isInValidMessageShow(fromControlName:string)
+  {
+
+  return  this.loginForm.get(fromControlName)?.invalid && (this.loginForm.get(fromControlName)?.dirty || this.loginForm.get(fromControlName)?.touched);
   }
 
 }
