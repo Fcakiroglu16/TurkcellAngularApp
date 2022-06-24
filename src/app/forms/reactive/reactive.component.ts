@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { setupTestingRouterInternal } from '@angular/router/testing';
+import { CountryDropMenu } from 'src/app/models/country-drop-menu';
 
 @Component({
   selector: 'app-reactive',
@@ -10,11 +11,14 @@ import { setupTestingRouterInternal } from '@angular/router/testing';
 export class ReactiveComponent implements OnInit {
 
   loginForm: FormGroup;
+  countryMenu: CountryDropMenu[] = [{ text: "Seçiniz", value: 0 }, { text: "Türkiye", value: 1 }, { text: "Almanya", value: 2 }, { text: "Fransa", value: 3 }];
   constructor(fb: FormBuilder) {
 
     this.loginForm = fb.group({
       userName: '', // FormControl();
-      password: ''
+      password: '',
+      rememberMe:false,
+      country:0
     })
   }
 
