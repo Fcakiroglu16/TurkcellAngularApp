@@ -26,7 +26,7 @@
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input class="form-control" type="password" formControlName="password" >
+                <input [ngClass]="{invalidRed:isValid('password'),validGreen:isSuccessValid('password')}" class="form-control" type="password" formControlName="password" >
             </div>
 
             <div class="alert alert-danger" *ngIf="isInValidMessageShow('password')">
@@ -58,9 +58,31 @@
             <label class="form-label" for="country">Ülke :</label>
             <select class="form-select" formControlName="country">
 
+                <option  value="">Seçiniz</option>
                 <option *ngFor="let item of countryMenu" value="{{item.value}}">{{item.text}}</option>
 
             </select>
+
+
+            <div class="alert alert-info">
+                <ul>
+                    <li>Valid :{{loginForm.get("country")?.valid}}</li>
+                    <li>Invalid :{{loginForm.get("country")?.invalid}}</li>
+                    <li>Errors :{{loginForm.get("country")?.errors | json}}</li>
+                    <li>Dirty :{{loginForm.get("country")?.dirty}}</li>
+                    <li>Pristine :{{loginForm.get("country")?.pristine}}</li>
+                    <li>Touched :{{loginForm.get("country")?.touched}}</li>
+                    <li>UnTouched :{{loginForm.get("country")?.untouched}}</li>
+                    <li>value :{{loginForm.get("country")?.value}}</li>
+                </ul>
+
+            </div>
+
+
+
+
+
+
 
             <div *ngFor="let item  of genderMenu">
                 <div class="form-check">
@@ -71,8 +93,27 @@
                   </div>
             </div>
 
+<div>
+  <label for="birthDate">Doğum Tarihi</label>
+   <input class="form-control" type="date" formControlName="birthDate" name="birthDate">
+</div>
+<div class="alert alert-info">
+    <ul>
+        <li>Valid :{{loginForm.get("birthDate")?.valid}}</li>
+        <li>Invalid :{{loginForm.get("birthDate")?.invalid}}</li>
+        <li>Errors :{{loginForm.get("birthDate")?.errors | json}}</li>
+        <li>Dirty :{{loginForm.get("birthDate")?.dirty}}</li>
+        <li>Pristine :{{loginForm.get("birthDate")?.pristine}}</li>
+        <li>Touched :{{loginForm.get("birthDate")?.touched}}</li>
+        <li>UnTouched :{{loginForm.get("birthDate")?.untouched}}</li>
+        <li>value :{{loginForm.get("birthDate")?.value}}</li>
+    </ul>
 
-            <button class="btn btn-primary mt-3" type="submit">Giriş</button>
+</div>
+
+
+
+            <button [disabled]="!loginForm.valid" class="btn btn-primary mt-3" type="submit">Giriş</button>
         </form>
     </div>
 </div>
