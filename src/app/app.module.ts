@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, Meta } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
@@ -16,18 +14,15 @@ import { HelperService } from './services/helper.service';
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent,
-  
+    SecondComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  
+ 
   ],
-  providers: [HelperService],
+  providers:[HelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
