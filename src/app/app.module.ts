@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Meta } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
-import { ReactiveComponent } from './forms/reactive/reactive.component';
-import { ReactiveType2Component } from './forms/reactive-type2/reactive-type2.component';
+import { FirstComponent } from './components/first/first.component';
+import { SecondComponent } from './components/second/second.component';
+import { HelperService } from './services/helper.service';
+
 
 
 
@@ -14,9 +15,9 @@ import { ReactiveType2Component } from './forms/reactive-type2/reactive-type2.co
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateDrivenComponent,
-    ReactiveComponent,
-    ReactiveType2Component,
+    FirstComponent,
+    SecondComponent,
+  
   
   ],
   imports: [
@@ -26,7 +27,7 @@ import { ReactiveType2Component } from './forms/reactive-type2/reactive-type2.co
     ReactiveFormsModule
   
   ],
-  providers: [],
+  providers: [HelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
