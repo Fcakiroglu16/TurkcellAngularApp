@@ -5,16 +5,16 @@ import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './nav/header/header.component';
+import { LayoutComponent } from './layout/layout.component';
 import { RouterModule } from '@angular/router';
-
-
+import { LeftMenuComponent } from './menu/left-menu/left-menu.component';
 
 
 @NgModule({
-  declarations: [AboutComponent,ContactComponent,GalleryComponent,HomeComponent, HeaderComponent],
+  declarations: [AboutComponent,ContactComponent,GalleryComponent,HomeComponent, HeaderComponent, LayoutComponent, LeftMenuComponent],
   imports: [
-    CommonModule,
-    RouterModule
+    CommonModule,RouterModule
+  
   ],
   exports:[AboutComponent,ContactComponent,GalleryComponent,HomeComponent,HeaderComponent]
 })

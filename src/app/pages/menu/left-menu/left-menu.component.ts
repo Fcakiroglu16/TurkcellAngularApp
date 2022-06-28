@@ -1,23 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-left-menu',
+  templateUrl: './left-menu.component.html',
+  styleUrls: ['./left-menu.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class LeftMenuComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
-    
-  
   }
+
   isHomePage():boolean
   {
     return location.pathname=='/';
   }
-
-  
 
 }
