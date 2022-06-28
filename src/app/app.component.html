@@ -1,12 +1,4 @@
-<ul>
-    <li><a  routerLink="/anasayfa">Ana sayfa</a></li>
-    <li><a  routerLink="/birinci-sayfa"  [queryParams]="{page:2,pageSize:1}">Birinci sayfa</a></li>
-    <li><a  routerLink="/ikinci-sayfa/2">İkinci sayfa</a></li>
-    <li><a  [routerLink]="['ikinci-sayfa',5]">İkinci sayfa</a></li>
-</ul>
-<hr>
-Sayfalar
-
+<app-header></app-header>
 <router-outlet></router-outlet>
 
 

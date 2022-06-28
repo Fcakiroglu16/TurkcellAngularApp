@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PageserviceService } from './pages/pageservice.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +7,5 @@ import { PageserviceService } from './pages/pageservice.service';
 })
 export class AppComponent {
   title = 'angularapp';
-
-  constructor(private service :PageserviceService)
-  {
-
-    this.service.Write();
-  }
 
 }

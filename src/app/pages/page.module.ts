@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FirstPageComponent } from './first-page/first-page.component';
-import { SecondPageComponent } from './second-page/second-page.component';
-import { PageserviceService } from './pageservice.service';
-import { PagepipePipe } from './pagepipe.pipe';
-import { HomePageComponent } from './home-page/home-page.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './nav/header/header.component';
+import { RouterModule } from '@angular/router';
+
 
 
 
 @NgModule({
-  declarations: [FirstPageComponent,SecondPageComponent, PagepipePipe, HomePageComponent],
+  declarations: [AboutComponent,ContactComponent,GalleryComponent,HomeComponent, HeaderComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  exports:[FirstPageComponent,SecondPageComponent,PagepipePipe],
-  providers:[PageserviceService]
+  exports:[AboutComponent,ContactComponent,GalleryComponent,HomeComponent,HeaderComponent]
 })
 export class PageModule { }
