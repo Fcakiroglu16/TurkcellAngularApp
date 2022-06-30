@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Meta } from '@angular/platform-browser';
-import { AdminModule } from './admin-pages/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PageModule } from './pages/page.module';
+import { FirstComponent } from './first/first.component';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FirstComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PageModule,
-    AdminModule
   ],
   providers:[],
   bootstrap: [AppComponent]
