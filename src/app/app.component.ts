@@ -1,7 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { defer, distinct, filter, find, first, from, fromEvent, interval, last, map, mapTo, mergeMap, Observable, of,delay, range, single, skip, skipUntil, skipWhile, switchMap, take, takeLast, takeWhile, timer, concatMap, toArray, reduce, tap, retry, catchError } from 'rxjs';
-import { ExampleService } from './example.service';
 import { ajax } from 'rxjs/ajax';
+import { Post } from './models/post';
+import { User } from './models/user';
+import { User2 } from './models/user2';
+import { JsonplaceholderService } from './services/jsonplaceholder.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,33 +14,28 @@ import { ajax } from 'rxjs/ajax';
 })
 export class AppComponent implements OnInit {
 
+postList:string[]=[];
+isLoadingShow:boolean=true;
   title = 'angularapp';
-  constructor(private example: ExampleService) {
+  currencyList:string[]=["Türk Lirası","Dolar"]
+  selectCurrency= new FormControl("Türk Lirası")
+  constructor(private  jsonPlaceHolderService: JsonplaceholderService) {
 
   }
 
   ngOnInit(): void {
 
-  var data = interval(1000).pipe(map(val=>{
 
-    if(val>6)
-    {
-    throw "değer 6'dan büyük olamaz"
-    }
-    return val;
+this.selectCurrency.valueChanges.subscribe(x=>{
+
+this.jsonPlaceHolderService.setCurrency(x);
+})
 
 
-  }),catchError(e=>of(`hata : ${e}`)))
-    
-
- data.subscribe({
-next :(val)=>{console.log(val)},
-error:(e)=>{console.log(`bu hata subscribe tarafında ele alındı`)}
-
- })
+ }
 
 
   
 }
 
-}
+

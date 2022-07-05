@@ -1,4 +1,14 @@
-<h2>Ana Component</h2>
+
+<select  [formControl]="selectCurrency">
+
+  <option *ngFor="let item of currencyList" value="{{item}}">{{item}}</option>
+</select>
+
+<app-a></app-a>
+<hr>
+<app-b></app-b>
+
+
 <router-outlet></router-outlet>
 
 
